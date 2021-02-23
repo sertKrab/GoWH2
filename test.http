@@ -1,0 +1,85 @@
+@request_id = 123
+@address = http://localhost:8080
+
+POST {{address}}/users
+Content-Type: application/json
+
+{
+    "username" : "test1",
+    "password" : "password",
+    "name" : "First User",
+    "email" : "test1@example.com"
+}
+###
+POST {{address}}/users
+Content-Type: application/json
+
+{
+    "username" : "test2",
+    "password" : "password",
+    "name" : "Second User",
+    "email" : "test2@example.com"
+}
+###
+GET {{address}}/users
+###
+GET {{address}}/users/1
+###
+GET {{address}}/users/111
+###
+PUT {{address}}/users/1
+Content-Type: application/json
+
+{
+    "name" : "First User Updated"
+}
+###
+DELETE {{address}}/users/2
+###
+GET {{address}}/users/2
+###
+POST {{address}}/users/1/posts
+Content-Type: application/json
+
+{
+    "content": "First Post"
+}
+###
+POST {{address}}/users/1/posts
+Content-Type: application/json
+
+{
+    "content": "Second Post"
+}
+###
+GET {{address}}/users/1/posts
+###
+GET {{address}}/users/1/posts/1
+###
+GET {{address}}/users/1/posts/111
+###
+PUT {{address}}/users/1/posts/1
+Content-Type: application/json
+
+{
+    "content": "First Post Updated",
+    "likes": 1
+}
+###
+GET {{address}}/users/1/posts/1
+###
+DELETE {{address}}/users/1/posts/2
+###
+GET {{address}}/users/1/posts/2
+###
+
+POST {{address}}/login
+Content-Type: application/x-www-form-urlencoded
+
+u=test1
+&p=password
+###
+GET {{address}}/tables
+X-Request-ID: {{request_id}}
+Authorization: Bearer 9676b6d5-5877-4f76-b93f-ea06647d76aa
+###

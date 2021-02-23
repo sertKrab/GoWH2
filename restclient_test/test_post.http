@@ -1,0 +1,31 @@
+### Create Post data
+POST http://localhost:1323/users/4/posts HTTP/1.1
+Authorization:  Bearer 0df0cfb6-14df-4718-837b-defc2f16f0b3
+content-type: application/json
+
+{    
+    "Content":"test post of userid 4",
+    "Likes": 1
+}
+
+
+### Get User Post data
+GET http://localhost:1323/users/1/posts
+
+### Get User Post data
+GET http://localhost:1323/users/1/posts/1
+
+### Get User Post data
+PUT  http://localhost:1323/users/4/posts/4 HTTP/1.1
+Authorization:  Bearer 0df0cfb6-14df-4718-837b-defc2f16f0b3
+content-type: application/json
+
+{    
+    "Content":"edit post of userid 4",
+    "Likes": 5
+}
+
+### Delete User Post data
+DELETE  http://localhost:1323/users/4/posts/2
+Authorization:  Bearer 0df0cfb6-14df-4718-837b-defc2f16f0b3
+

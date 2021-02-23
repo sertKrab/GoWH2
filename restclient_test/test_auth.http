@@ -1,0 +1,8 @@
+### Create Usr data
+POST http://localhost:1323/login 
+content-type: application/x-www-form-urlencoded
+
+
+    &u=sert4&p=1234567890
+ 
+
